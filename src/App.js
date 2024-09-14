@@ -14,6 +14,10 @@ function App() {
       });
   }, []);
 
+  function generateRandomImage(prompt) {
+    
+  } 
+
   return (
     <div className="App">
       <header className="App-header">
