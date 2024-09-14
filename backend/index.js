@@ -1,29 +1,28 @@
+// server
+
 const express = require('express')
 const app = express()
 require('dotenv').config();
+const OpenAI = require("openai");
 
-import OpenAI from "openai"; 
+const openai = new OpenAI({
+  dangerouslyAllowBrowser: true,
+  apiKey: process.env.OPENAI_API_KEY
+});
 
-if (process.env.OPENAI_API_KEY) {
-  // The environment variable is set and not empty
-  const openai = new OpenAI({
-      dangerouslyAllowBrowser: true,
-      apiKey: process.env.OPENAI_API_KEY
+// Generate image using open ai
+async function ImageGenerator(prompt) {
+  const image = await openai.images.generate({
+    model: "dall-e-3",
+    prompt: "a white siamese cat",
+    n: 1,
   });
-  console.log(process.env.OPENAI_API_KEY);
-} else {
-  console.error('OPENAI_API_KEY is not set.');
-}
-
-function ImageGenerator(prompt) {
-  
+  console.log(image.data[0].url);
 }
 
 ImageGenerator("Please help me");
 
 app.get('/generate_image', (req, res) => {
-  const key =  process.env.OPENAI_API_KEY
-  console.log(key);
   
   // const {body} = req
   // const {prompt} = body
