@@ -5,7 +5,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>hello</p>
+        <div className="navbar">
+          <div className='navbar-left'>
+            <h3>storyAI</h3>
+          </div>
+          <div className='navbar-right'>
+            <h3>Settings</h3>
+            <p>hello</p>
+          </div>
+        </div>
+        
       </header>
     </div>
   );
