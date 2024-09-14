@@ -1,7 +1,20 @@
-import { useState } from "react";
-import OpenAI from "openai"; 
-import './index.css';
+require('dotenv').config();
 
+// import { useState } from "react";
+// import OpenAI from "openai"; 
+// import './index.css';
+ 
+if (process.env.OPENAI_API_KEY) {
+  // The environment variable is set and not empty
+  const openai = new OpenAI({
+      dangerouslyAllowBrowser: true,
+      apiKey: process.env.OPENAI_API_KEY
+  });
+} else {
+  console.error('OPENAI_API_KEY is not set.');
+}
+
+/*
 function ImageGenerator() {
     // STATE VARIABLES
     // const [userPrompt, setUserPrompt] = useState("");
@@ -9,8 +22,19 @@ function ImageGenerator() {
     // const [loading, setIsLoading] = useState(false);
   
     // create open ai
-    const openai = new OpenAI();
+    
+    if (process.env.OPENAI_API_KEY) {
+        // The environment variable is set and not empty
+        const openai = new OpenAI({
+            dangerouslyAllowBrowser: true,
+            apiKey: process.env.OPENAI_API_KEY
+        });
+    } else {
+        console.error('OPENAI_API_KEY is not set.');
+    }
   
+    const openai = new OpenAI({dangerouslyAllowBrowser: true, apiKey: process.env.OPENAI_API_KEY});
+
     // Event Handlers
     /*
     const handleChange = (e) => {
@@ -98,3 +122,4 @@ function ImageGenerator() {
 
 
 export default ImageGenerator;
+*/
