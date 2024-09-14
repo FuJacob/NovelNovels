@@ -66,4 +66,41 @@ async function groqCheck(textSegments) {
             body: JSON.stringify({ text })
         });
         const result = await response.json();
-        checkedSegments.push(result.correctedText); // Adjust based on API resp
+        checkedSegments.push(result.correctedText); // Adjust based on API response
+    }
+    return checkedSegments;
+}
+
+async function generateVoiceover(textSegments) {
+    const ttsClient = new TextToSpeechClient();
+    const voiceoverPaths = [];
+    for (const text of textSegments) {
+        const [response] = await ttsClient.synthesizeSpeech({
+            input: { text },
+            voice: { languageCode: 'en-US', ssmlGender: 'NEUTRAL' },
+            audioConfig: { audioEncoding: 'MP3' },
+        });
+        const audioPath = `audio-${Date.now()}.mp3`;
+        fs.writeFileSync(audioPath, response.audioContent, 'binary');
+        voiceoverPaths.push(audioPath);
+    }
+    return voiceoverPaths;
+}
+
+function generateSoundEffects(images) {
+    // Placeholder logic for generating sound effects; this can be expanded with actual sound effect generation
+    return images.map(() => 'sound-effect.mp3'); // Placeholder sound effect paths
+}
+
+function formatBookData(text, images, voiceover, soundEffects) {
+    return text.map((text, index) => ({
+        image: images[index],
+        text,
+        voiceover: voiceover[index],
+        soundEffect: soundEffects[index],
+    }));
+}
+
+app.listen(port, () => {
+    console.log(`Server running on http://localhost:${port}`);
+});
