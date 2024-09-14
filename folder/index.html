@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Book App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Interactive Book App</h1>
+        <input type="file" id="pdfUpload" accept=".pdf">
+        <label for="styleSelect">Select Image Style:</label>
+        <select id="styleSelect">
+            <option value="cartoon">Cartoon</option>
+            <option value="realistic">Realistic</option>
+            <option value="anime">Anime</option>
+        </select>
+        <label for="imageFrequency">Image Frequency (words per image):</label>
+        <input type="number" id="imageFrequency" min="1" value="100">
+        <button id="processBtn">Process PDF</button>
+        <div id="bookDisplay"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
