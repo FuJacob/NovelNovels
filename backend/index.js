@@ -10,7 +10,7 @@ app.get('/generate_image', (req, res) => {
   
   // const {body} = req
   // const {prompt} = body
-  return res.json({'test':1})
+  return res.json({'test':1})  // return a binary string to later be parsed in a binary string
 })
 
 app.listen(8080)
