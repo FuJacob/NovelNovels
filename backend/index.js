@@ -2,12 +2,14 @@
 const express = require('express')
 const app = express()
 require('dotenv').config();
-// const cors = require('cors');
-// app.use(cors()); // Allow cross-origin requests
-app.use(express.json()); // Parse JSON bodies
+const cors = require('cors');
+
 const axios = require('axios');
 const path = require('path');
 const port = 5000;
+
+app.use(cors()); // Allow cross-origin requests
+app.use(express.json()); // Parse JSON bodies
 
 async function ImageGenerator(prompt) {
   prompt = prompt.concat("width=1280&height=720&nologo=true&enhance=true")
@@ -15,15 +17,18 @@ async function ImageGenerator(prompt) {
   try {
     const response = await axios.get(url, { responseType: 'arraybuffer' });
     console.log(response["data"]);
+    return response;
   } catch (error) {
     console.error('Error downloading the image:', error);
   }
 }
-
-ImageGenerator("Please help me");
-
+ImageGenerator("pllease load");
 app.get('/generate_image', (req, res) => {
-  return res.json({image: ImageGenerator("Fun")})  // return a binary string to later be parsed in a binary string
+  const imgData = ImageGenerator('Fun');
+  console.log(imgData);
+  return res.json({image: imgData})  // return a binary string to later be parsed in a binary string
 })
 
-app.listen(8080)
+app.listen(8080, () => {
+  console.log(`Server is running on port 8080.`);
+});

@@ -7,16 +7,12 @@ function App() {
 
   useEffect(() => {
     // Fetch data from the backend
-    fetch('/api/data')
+    fetch('http://localhost:8080/generate_image')
       .then((response) => response.json())
       .then((data) => {
         setData(data);
       });
   }, []);
-
-  function generateRandomImage(prompt) {
-    
-  } 
 
   return (
     <div className="App">
@@ -27,11 +23,11 @@ function App() {
           </div>
           <div className='navbar-right'>
             <h3>Settings</h3>
-            <p>hello</p>
           </div>
         </div>
         
       </header>
+      <p>{data}</p>
     </div>
   );
 }
