@@ -1,25 +1,23 @@
 import { useState } from "react";
-import { Configuration, OpenAIApi } from "openai";
-import '../index.css'
+import OpenAI from "openai"; 
+import './index.css';
 
 function ImageGenerator() {
     // STATE VARIABLES
-    const [userPrompt, setUserPrompt] = useState("");
-    const [generatedImage, setGeneratedImage] = useState("");
-    const [loading, setIsLoading] = useState(false);
+    // const [userPrompt, setUserPrompt] = useState("");
+    // const [generatedImage, setGeneratedImage] = useState("");
+    // const [loading, setIsLoading] = useState(false);
   
-    // OPENAI CONFIGURATION
-  const configuration = new Configuration({
-    apiKey: import.meta.env.VITE_APP_API_KEY
-  });
-  
-  const openai = new OpenAIApi(configuration);
+    // create open ai
+    const openai = new OpenAI();
   
     // Event Handlers
+    /*
     const handleChange = (e) => {
       setUserPrompt(e.target.value);
     };
-  
+    */
+    /*
     const handleImageHandler = async (e) => {
       try {
         setIsLoading(true);
@@ -38,7 +36,9 @@ function ImageGenerator() {
         console.log(e);
       }
     };
+    */
   
+    /*
     const handleCopyToClipboard = () => {
       navigator.clipboard.writeText(generatedImage)
         .then(() => {
@@ -48,11 +48,19 @@ function ImageGenerator() {
           console.error("Failed to copy image URL to clipboard:", error);
         });
     };
+    */
 
     return (
+      <div className="app__container">
+        <h1>AI-Powered Generated Images</h1>
+      </div>
+    );
+    /*
+    return (
         <div className="app__container">
+          
           <h1>AI-Powered Generated Images</h1>
-    
+
           <div className="image__input">
             <input
               type="text"
@@ -82,8 +90,10 @@ function ImageGenerator() {
               </>
             )}
           </div>
+          
         </div>
     );
+    */
 }
 
 
