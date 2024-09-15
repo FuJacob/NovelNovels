@@ -41,7 +41,7 @@ function App() {
       .then((data) => setPages(data.pages));
   }, []);
 
-  const HTML_OLD_MAN = createHTMLPages(pages);
+  const HTML_BOOK_PAGES = createHTMLPages(pages);
   return (
     <div className="App">
       <header className="App-header">
@@ -55,7 +55,7 @@ function App() {
         </div>
         
       </header>
-      <p>{HTML_OLD_MAN}</p>
+      <p>{HTML_BOOK_PAGES}</p>
     </div>
   );
 }

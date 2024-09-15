@@ -13,8 +13,6 @@ function getText(path) {
   return fs.readFileSync("..\\assets\\books\\old-man-and-the-sea.txt", { encoding: 'utf8', flag: 'r' }); 
 }
 
-OLD_MAN = getText('..\\assets\\books\\old-man-and-the-sea.txt');
-
 function createPages(text, perpage) {
   const textLength = text.length;
   const pages = [];
@@ -41,10 +39,14 @@ function createPages(text, perpage) {
   return pages;
 }
 
+OLD_MAN = getText('..\\assets\\books\\old-man-and-the-sea.txt');
 OLD_MAN_PAGES = createPages(OLD_MAN, 500)
+GOLDEN_BIRD = getText('..\\assets\\books\\golden-bird.txt');
+GOLDEN_BIRD_PAGES = createPages(GOLDEN_BIRD, 500);
+
 
 app.get("/message", (req, res) => {
-  res.json({ pages: OLD_MAN_PAGES });
+  res.json({ pages: GOLDEN_BIRD_PAGES });
 });
 
 app.listen(8080, () => {
