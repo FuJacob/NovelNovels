@@ -28,15 +28,14 @@ function Library() {
           <p>Welcome to your personal library. Here you can view and manage your books.</p>
           <div className="book-list">
             {/* Add a list of books or placeholder content here */}
-            <Link to="/0" className="book-item"><div className="book-item">Book 1</div></Link>
-            
-            <div className="book-item">Book 2</div>
-            <div className="book-item">Book 3</div>
-            <div className="book-item">Book 4</div>
-            <div className="book-item">Book 5</div>
-            <div className="book-item">Book 6</div>
-            <div className="book-item">Book 7</div>
-            <div className="book-item">Book 8</div>
+            <Link to="/reader" className="book-item"><img src="./covers/golden-bird-cover.jpg" alt="Contact" />Book 1</Link>
+            <Link to="/2" className="book-item">Book 2</Link>
+            <Link to="/3" className="book-item">Book 3</Link>
+            <Link to="/4" className="book-item">Book 4</Link>
+            <Link to="/5" className="book-item">Book 5</Link>
+            <Link to="/6" className="book-item">Book 6</Link>
+            <Link to="/7" className="book-item">Book 7</Link>
+            <Link to="/8" className="book-item">Book 8</Link>
           </div>
           <Link to="/" className="back-button">Back to Home</Link>
         </div>
