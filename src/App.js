@@ -37,7 +37,7 @@ function createHTMLPages(pages) {
 function App() {
   const [pages, setPages] = useState("");  
   useEffect(() => {
-    fetch("http://localhost:8080/message")
+    fetch("http://localhost:8080/get_pages")
       .then((res) => res.json())
       .then((data) => setPages(data.pages));
   }, []);
