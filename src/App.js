@@ -11,13 +11,13 @@ import React, { useState, useEffect } from 'react';
 
 function createImgURL(prompt, style) {
   prompt = prompt.replace(/ /g,"_");
-  return `https://image.pollinations.ai/prompt/${prompt}?width=720&height=720&model=${style}&seed=42&nologo=true`;
+  return `https://image.pollinations.ai/prompt/${style}${prompt}?width=720&height=720&model=flux&seed=15&nologo=true`;
 }
 
 function createHTMLPages(pages) {
   const HTML_LIST = [];
   for (let i = 0; i < pages.length; i++) {
-    if (i % 6 == 0) {
+    if (i % 1 === 0) {
       const pageImg = createImgURL(pages[i], "flux");
     HTML_LIST[i] = (
     <div>
