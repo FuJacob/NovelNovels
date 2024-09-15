@@ -7,7 +7,7 @@ import './App.js';
 
 function createImgURL(prompt, style) {
     prompt = prompt + " no text ";
-    prompt = prompt.replace(/ /g,"_");
+    prompt = prompt.replace(/ /g,"%20");
     return `https://image.pollinations.ai/prompt/${prompt}?width=480&height=480&model=${style}&seed=1&nologo=true`;
 }
 
