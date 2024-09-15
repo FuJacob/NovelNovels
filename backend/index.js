@@ -34,9 +34,36 @@ function createPages(text, perpage) {
   return pages;
 }
 
-app.get("/get_pages", (req, res) => {
-  // console.log(createPages(books.BOOKS[0].getText(), 500));
+app.get("/get_pages/0", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[0].getText(), 500) });
+});
+
+app.get("/get_pages/1", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[1].getText(), 500) });
+});
+
+app.get("/get_pages/2", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[2].getText(), 500) });
+});
+
+app.get("/get_pages/3", (req, res) => {
   res.json({ pages: createPages(books.BOOKS[3].getText(), 500) });
+});
+
+app.get("/get_pages/4", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[4].getText(), 500) });
+});
+
+app.get("/get_pages/5", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[5].getText(), 500) });
+});
+
+app.get("/get_pages/6", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[6].getText(), 500) });
+});
+
+app.get("/get_pages/7", (req, res) => {
+  res.json({ pages: createPages(books.BOOKS[7].getText(), 500) });
 });
 
 app.listen(8080, () => {
