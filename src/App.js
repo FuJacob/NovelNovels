@@ -1,6 +1,9 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import './fonts.css';
+import Library from './Library';
 
 const myMessage = "hello this is my story man";
 
@@ -59,7 +62,7 @@ function App() {
             <div className="navbar w-nav">
               <div className="container w-container">
                 <a href="#" className="brand w-nav-brand">
-                  <div className="text-block">storyAI</div>1
+                  <div className="text-block">storyAI</div>
                 </a>
                 <nav role="navigation" className="nav-menu w-nav-menu">
                   <a href="#settings" className="nav-link w-nav-link">Settings</a>
@@ -78,11 +81,12 @@ function App() {
               </Link>
             </div>
           </div>
-        </div>
-        
-      </header>
-      <p>{HTML_BOOK_PAGES}</p>
-    </div>
+        </header>
+        <Routes>
+          <Route path="/" element={<MainContent />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
