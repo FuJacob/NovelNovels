@@ -10,7 +10,7 @@ app.use(cors());
 const fs = require("fs");
 
 function getText(path) {
-  return fs.readFileSync("..\\assets\\books\\old-man-and-the-sea.txt", { encoding: 'utf8', flag: 'r' }); 
+  return fs.readFileSync(path, { encoding: 'utf8', flag: 'r' }); 
 }
 
 function createPages(text, perpage) {
