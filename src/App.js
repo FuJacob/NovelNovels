@@ -4,35 +4,44 @@ import React, { useState, useEffect } from 'react';
 
 // Simulate a call to Dropbox or other service that can
 // return an image as an ArrayBuffer.
-var xhr = new XMLHttpRequest();
-
 
 // Use JSFiddle logo as a sample image to avoid complicating
 // this example with cross-domain issues.
 
 
-async function createImgURL(prompt, style) {
-  prompt.replace(/ /g,"_");
-  return `https://image.pollinations.ai/prompt/{prompt}?width=1280&height=720&model={style}&seed=42&nologo=true`
+function createImgURL(prompt, style) {
+  prompt = prompt.replace(/ /g,"_");
+  return `https://image.pollinations.ai/prompt/${prompt}?width=720&height=720&model=${style}&seed=42&nologo=true`;
+}
+
+function createHTMLPages(pages) {
+  const HTML_LIST = [];
+  for (let i = 0; i < pages.length; i++) {
+    if (i % 6 == 0) {
+      const pageImg = createImgURL(pages[i], "flux");
+    HTML_LIST[i] = (
+    <div>
+      <p>{pages[i]}</p>
+      <img src={pageImg} />
+    </div>)
+    } else {
+      HTML_LIST[i] = (<div>
+        <p>{pages[i]}</p>
+      </div>)
+    }
+  }
+  return HTML_LIST;
 }
 
 function App() {
-  const [data, setData] = useState([]);
-  
-  const imgurl = createImgURL("Fun", "flux");
-
-
-  /*
+  const [pages, setPages] = useState("");  
   useEffect(() => {
-    // Fetch data from the backend
-    console.log(`http://localhost:8080/generate_image`);
-    fetch(`http://localhost:8080/generate_image`)
+    fetch("http://localhost:8080/message")
       .then((res) => res.json())
-      .then((data) => setData(data.imageData));
+      .then((data) => setPages(data.pages));
   }, []);
-  console.log(data);
-  */
 
+  const HTML_OLD_MAN = createHTMLPages(pages);
   return (
     <div className="App">
       <header className="App-header">
@@ -46,7 +55,7 @@ function App() {
         </div>
         
       </header>
-      <img src={imgurl}></img>
+      <p>{HTML_OLD_MAN}</p>
     </div>
   );
 }
