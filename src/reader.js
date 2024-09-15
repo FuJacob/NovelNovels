@@ -1,5 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import HTMLFlipBook from 'react-pageflip';
 import './App.css';
 import './fonts.css';
 import './App.js';
@@ -13,18 +14,15 @@ function createImgURL(prompt, style) {
 function createHTMLPages(pages) {
     const HTML_LIST = [];
     for (let i = 0; i < pages.length; i++) {
-      if (i % 1 === 0) {
         const pageImg = createImgURL(pages[i], "flux");
-      HTML_LIST[i] = (
-      <div>
-        <img src={pageImg} alt="AI-Generated-Image"/>
-        <p>{pages[i]}</p>
-      </div>)
-      } else {
-        HTML_LIST[i] = (<div>
-          <p>{pages[i]}</p>
+        HTML_LIST[i] = (
+        <div className="demoPage">
+            <h2>Page {i+1}</h2>
+            <div><img src={pageImg} alt="AI-Generated-Image"/></div>
+            
+            <p>{pages[i]}</p>
         </div>)
-      }
+      
     }
     return HTML_LIST;
 }
@@ -56,12 +54,15 @@ function Reader() {
                 </div>
               </div>
             </div>
-          </div>
+        </div>
+
+        <HTMLFlipBook width={300} height={500}>
+            {createHTMLPages(pages)}
+        </HTMLFlipBook>
+
         </header>
 
-        <div>
-        {createHTMLPages(pages)}
-        </div>
+        
       </div>
     );
   }
