@@ -17,11 +17,13 @@ function createHTMLPages(pages) {
     for (let i = 0; i < pages.length; i++) {
         const pageImg = createImgURL(pages[i], "flux");
         HTML_LIST[i] = (
+        <div className='demopage-container'>
         <div className="demoPage">
             <h2>Page {i+1}</h2>
             <div><img src={pageImg} alt="AI-Generated-Image"/></div>
             
             <p>{pages[i]}</p>
+        </div>
         </div>)
       
     }
@@ -57,11 +59,11 @@ function Reader() {
               </div>
             </div>
         </div>
-
-        <HTMLFlipBook width={300} height={500}>
+        <div className='demopage-container'>
+        <HTMLFlipBook width={300} height={500} size='stretch'>
             {createHTMLPages(pages)}
         </HTMLFlipBook>
-
+        </div>
         </header>
 
         
