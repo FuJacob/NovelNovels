@@ -40,13 +40,13 @@ function createPages(text, perpage) {
 }
 
 OLD_MAN = getText('..\\assets\\books\\old-man-and-the-sea.txt');
-OLD_MAN_PAGES = createPages(OLD_MAN, 500)
+OLD_MAN_PAGES = createPages(OLD_MAN, 1000)
 GOLDEN_BIRD = getText('..\\assets\\books\\golden-bird.txt');
-GOLDEN_BIRD_PAGES = createPages(GOLDEN_BIRD, 500);
+GOLDEN_BIRD_PAGES = createPages(GOLDEN_BIRD, 1000);
 
 
 app.get("/message", (req, res) => {
-  res.json({ pages: GOLDEN_BIRD_PAGES });
+  res.json({ pages: OLD_MAN_PAGES });
 });
 
 app.listen(8080, () => {
