@@ -3,15 +3,10 @@ const { create } = require('domain');
 const express = require('express')
 const cors = require("cors");
 const app = express()
+const books = require("./books.js")
 
 app.use(express.json())
 app.use(cors());
-
-const fs = require("fs");
-
-function getText(path) {
-  return fs.readFileSync(path, { encoding: 'utf8', flag: 'r' }); 
-}
 
 function createPages(text, perpage) {
   const textLength = text.length;
@@ -39,14 +34,9 @@ function createPages(text, perpage) {
   return pages;
 }
 
-OLD_MAN = getText('..\\assets\\books\\old-man-and-the-sea.txt');
-OLD_MAN_PAGES = createPages(OLD_MAN, 1000)
-GOLDEN_BIRD = getText('..\\assets\\books\\golden-bird.txt');
-GOLDEN_BIRD_PAGES = createPages(GOLDEN_BIRD, 1000);
-
-
-app.get("/message", (req, res) => {
-  res.json({ pages: OLD_MAN_PAGES });
+app.get("/get_pages", (req, res) => {
+  // console.log(createPages(books.BOOKS[0].getText(), 500));
+  res.json({ pages: createPages(books.BOOKS[3].getText(), 500) });
 });
 
 app.listen(8080, () => {

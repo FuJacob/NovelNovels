@@ -45,21 +45,38 @@ function createHTMLPages(pages) {
 function App() {
   const [pages, setPages] = useState("");  
   useEffect(() => {
-    fetch("http://localhost:8080/message")
+    fetch("http://localhost:8080/get_pages")
       .then((res) => res.json())
       .then((data) => setPages(data.pages));
   }, []);
 
   const HTML_BOOK_PAGES = createHTMLPages(pages);
   return (
-    <div className="App">
-      <header className="App-header">
-        <div className="navbar">
-          <div className='navbar-left'>
-            <h3>storyAI</h3>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <div className="nav-menu">
+            <div className="navbar w-nav">
+              <div className="container w-container">
+                <a href="#" className="brand w-nav-brand">
+                  <div className="text-block">storyAI</div>1
+                </a>
+                <nav role="navigation" className="nav-menu w-nav-menu">
+                  <a href="#settings" className="nav-link w-nav-link">Settings</a>
+                </nav>
+                <div className="w-nav-button">
+                  <div className="w-icon-nav-menu"></div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className='navbar-right'>
-            <h3>Settings</h3>
+          <div className='land-container'>
+            <p>Transform any novel to a picture book in seconds</p>
+            <div className='button-div'>
+              <Link to="#library" className='button'>
+                <p>Try free</p>
+              </Link>
+            </div>
           </div>
         </div>
         
@@ -68,4 +85,19 @@ function App() {
     </div>
   );
 }
+
+function MainContent() {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash === '#library') {
+      // Render Library component or scroll to library section
+      console.log('Show Library');
+      // You can add logic here to show the Library component
+    }
+  }, [location]);
+
+  return null; // or return some default content
+}
+
 export default App;
