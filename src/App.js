@@ -51,7 +51,7 @@ function MainContent() {
       <div className="navbar w-nav">
         <div className="container w-container">
           <a href="#" className="brand w-nav-brand">
-            <div className="text-block">storyAI</div>
+            <div className="text-block">Novel Novels</div>
           </a>
           <nav role="navigation" className="nav-menu w-nav-menu">
             <a href="#settings" className="nav-link w-nav-link">Settings</a>
