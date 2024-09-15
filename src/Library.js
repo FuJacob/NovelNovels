@@ -27,15 +27,40 @@ function Library() {
           <h1>My Library</h1>
           <p>Welcome to your personal library. Here you can view and manage your books.</p>
           <div className="book-list">
-            {/* Add a list of books or placeholder content here */}
-            <Link to="/reader" className="book-item"><img src="./covers/golden-bird-cover.jpg" alt="Contact" />Book 1</Link>
-            <Link to="/2" className="book-item">Book 2</Link>
-            <Link to="/3" className="book-item">Book 3</Link>
-            <Link to="/4" className="book-item">Book 4</Link>
-            <Link to="/5" className="book-item">Book 5</Link>
-            <Link to="/6" className="book-item">Book 6</Link>
-            <Link to="/7" className="book-item">Book 7</Link>
-            <Link to="/8" className="book-item">Book 8</Link>
+            <Link to="/router" className="book-item">
+              <div className="book-cover">
+                <img src="./covers/old-man-cover.jpg" alt="Book 1" />
+              </div>
+              <div className="book-title">The Old Man and the Sea</div>
+            </Link>
+            <Link to="/2" className="book-item">
+              <div className="book-cover"><img src="./covers/golden-bird-cover.jpg" alt="Book 2" /></div>
+              <div className="book-title">The Golden Bird</div>
+            </Link>
+            <Link to="/3" className="book-item">
+              <div className="book-cover"><img src="./covers/alice-in-cover.jpg" alt="Book 3" /></div>
+              <div className="book-title">Alice in Wonderland</div>
+            </Link>
+            <Link to="/4" className="book-item">
+              <div className="book-cover"><img src="./covers/a-modest-cover.jpg" alt="Book 4" /></div>
+              <div className="book-title">A Modest Proposal</div>
+            </Link>
+            <Link to="/5" className="book-item">
+              <div className="book-cover"><img src="./covers/great-gatsby-cover.jpg" alt="Book 5" /></div>
+              <div className="book-title">The Great Gatsby</div>
+            </Link>
+            <Link to="/6" className="book-item">
+              <div className="book-cover"><img src="./covers/ethan-frome-cover.jpg" alt="Book 6" /></div>
+              <div className="book-title">Ethan Frome</div>
+            </Link>
+            <Link to="/7" className="book-item">
+              <div className="book-cover"><img src="./covers/jekyll-hyde-cover.jpg" alt="Book 7" /></div>
+              <div className="book-title">Jekyll and Hyde</div>
+            </Link>
+            <Link to="/8" className="book-item">
+              <div className="book-cover"><img src="./covers/three-little-cover.jpg" alt="Book 8" /></div>
+              <div className="book-title">Three Little Pigs</div>
+            </Link>
           </div>
           <Link to="/" className="back-button">Back to Home</Link>
         </div>
