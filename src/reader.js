@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import './App.css';
@@ -28,7 +28,8 @@ function createHTMLPages(pages) {
 }
 
 function Reader() {
-    const Number = 0;
+    const routeParams = useParams();
+    const Number = routeParams["id"];
     const [pages, setPages] = useState("");  
     useEffect(() => {
         fetch(`http://localhost:8080/get_pages/${Number}`)

@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useLocation, useParams } from 'react-router-dom';
 import './fonts.css';
 import Library from './Library';
 import Reader from './reader'
@@ -28,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainContent />} />
           <Route path="/library" element={<Library />} />
-          <Route path="/reader" element={<Reader />} />
+          <Route path="/reader/:id" element={<Reader />} />
         </Routes>
     </Router>
   );
