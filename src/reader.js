@@ -4,6 +4,7 @@ import HTMLFlipBook from 'react-pageflip';
 import './App.css';
 import './fonts.css';
 import './App.js';
+import './reader.css';
 
 function createImgURL(prompt, style) {
     prompt = prompt + " no text ";
@@ -45,7 +46,7 @@ function Reader() {
             <div className="navbar w-nav">
               <div className="container w-container">
                 <Link to="/" className="brand w-nav-brand">
-                  <div className="text-block">storyAI</div>
+                  <div className="text-block">Novel Novels</div>
                 </Link>
                 <nav role="navigation" className="nav-menu w-nav-menu">
                   <Link to="#settings" className="nav-link w-nav-link">Settings</Link>
