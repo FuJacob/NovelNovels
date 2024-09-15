@@ -35,8 +35,8 @@ function createPages(text, perpage) {
 }
 
 app.get("/get_pages", (req, res) => {
-  console.log(createPages(books.BOOKS[0].getText(), 500));
-  res.json({ pages: createPages(books.BOOKS[0].getText(), 500) });
+  // console.log(createPages(books.BOOKS[0].getText(), 500));
+  res.json({ pages: createPages(books.BOOKS[3].getText(), 500) });
 });
 
 app.listen(8080, () => {

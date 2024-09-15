@@ -12,7 +12,7 @@ import React, { useState, useEffect } from 'react';
 function createImgURL(prompt, style) {
   prompt = prompt + " no text ";
   prompt = prompt.replace(/ /g,"_");
-  return `https://image.pollinations.ai/prompt/${prompt}?width=480&height=480&model=${style}&seed=42&nologo=true`;
+  return `https://image.pollinations.ai/prompt/${prompt}?width=480&height=480&model=${style}&seed=1&nologo=true`;
 }
 
 function createHTMLPages(pages) {
