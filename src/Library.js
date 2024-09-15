@@ -25,9 +25,9 @@ function Library() {
         </div>
         <div className='library-container'>
           <h1>My Library</h1>
-          <p>Welcome to your personal library. Here you can view and manage your books.</p>
+          <p>Which book would you like to read today?</p>
           <div className="book-list">
-            <Link to="/router" className="book-item">
+            <Link to="/reader" className="book-item">
               <div className="book-cover">
                 <img src="./covers/old-man-cover.jpg" alt="Book 1" />
               </div>
@@ -62,7 +62,7 @@ function Library() {
               <div className="book-title">Three Little Pigs</div>
             </Link>
           </div>
-          <Link to="/" className="back-button">Back to Home</Link>
+          {/* <Link to="/" className="back-button">Back to Home</Link> */}
         </div>
       </header>
     </div>

@@ -20,6 +20,7 @@
     border: 1px solid transparent;
     text-align: center;
     width: 200px; /* Adjust the width of each book item */
+    margin-top: 25px;
   }
   
   .book-cover {
