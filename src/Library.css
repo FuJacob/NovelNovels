@@ -1,27 +1,40 @@
 .library-container {
     color: black;
+    width: 1000px; /* Set the width of the container to 1000px */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: left; /* Align text inside this container to the left */
+  }
+  
+  .library-container h1,
+  .library-container p {
+    margin-left: 0; /* Ensure the heading and paragraph are aligned to the left */
   }
   
   .book-list {
-    display: flex;       
-    justify-content: space-around; 
-    align-items: center; 
+    display: flex;
+    flex-wrap: wrap; /* Allows the books to wrap into multiple rows */
+    justify-content: space-between; /* Space the book items evenly */
   }
   
   .book-item {
-    flex: 1;           
-    margin: 10px;         
-    padding: 20px;
-    border: 1px solid #000; 
+    border: 1px solid transparent;
     text-align: center;
-    height: 150px;
-    width: 90px;
-    color: black;
+    width: 200px; /* Adjust the width of each book item */
   }
-
-  .book-item img {
-    width: 100%;  
+  
+  .book-cover {
+    height: 300px; 
+    margin-bottom: 10px;
+  }
+  
+  .book-cover img {
+    width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
+  }
+  
+  .book-title {
+    font-size: 16px;
+    color: black;
   }
   
