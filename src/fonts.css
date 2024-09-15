@@ -18,3 +18,11 @@
     font-weight: medium;
     font-style: medium;
   }
+
+
+  @font-face {
+    font-family: 'Metropolis';
+    src: url('../public/fonts/Metropolis-SemiBold.otf') format('otf');
+    font-weight: semibold;
+    font-style: semibold;
+  }

@@ -19,10 +19,11 @@ function createHTMLPages(pages) {
         HTML_LIST[i] = (
         <div className='demopage-container'>
         <div className="demoPage">
-            <h2>Page {i+1}</h2>
+            
             <div><img src={pageImg} alt="AI-Generated-Image"/></div>
             
-            <p>{pages[i]}</p>
+            <p className='page-text'>{pages[i]}</p>
+            <h2 className='page-number'>Page {i+1}</h2>
         </div>
         </div>)
       
