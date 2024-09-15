@@ -56,36 +56,10 @@ function App() {
   const HTML_BOOK_PAGES = createHTMLPages(pages);
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <div className="nav-menu">
-            <div className="navbar w-nav">
-              <div className="container w-container">
-                <a href="#" className="brand w-nav-brand">
-                  <div className="text-block">storyAI</div>
-                </a>
-                <nav role="navigation" className="nav-menu w-nav-menu">
-                  <a href="#settings" className="nav-link w-nav-link">Settings</a>
-                </nav>
-                <div className="w-nav-button">
-                  <div className="w-icon-nav-menu"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='land-container'>
-            <p>Transform any novel to a picture book in seconds</p>
-            <div className='button-div'>
-              <Link to="#library" className='button'>
-                <p>Try free</p>
-              </Link>
-            </div>
-          </div>
-        </header>
         <Routes>
           <Route path="/" element={<MainContent />} />
+          <Route path="/library" element={<Library />} />
         </Routes>
-      </div>
     </Router>
   );
 }
@@ -101,7 +75,33 @@ function MainContent() {
     }
   }, [location]);
 
-  return null; // or return some default content
+  return <div className="App">
+  <header className="App-header">
+    <div className="nav-menu">
+      <div className="navbar w-nav">
+        <div className="container w-container">
+          <a href="#" className="brand w-nav-brand">
+            <div className="text-block">storyAI</div>
+          </a>
+          <nav role="navigation" className="nav-menu w-nav-menu">
+            <a href="#settings" className="nav-link w-nav-link">Settings</a>
+          </nav>
+          <div className="w-nav-button">
+            <div className="w-icon-nav-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className='land-container'>
+      <p>Transform any novel to a picture book in seconds</p>
+      <div className='button-div'>
+        <Link to="library" className='button'>
+          <p>Try free</p>
+        </Link>
+      </div>
+    </div>
+  </header>
+</div>; // or return some default content
 }
 
 export default App;
