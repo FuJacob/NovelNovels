@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Library.css';
 import './App.css';
 import './fonts.css';
 
