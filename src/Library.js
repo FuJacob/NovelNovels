@@ -15,7 +15,7 @@ function Library() {
                 <div className="text-block">Novel Novels</div>
               </Link>
               <nav role="navigation" className="nav-menu w-nav-menu">
-                <Link to="#settings" className="nav-link w-nav-link">Settings</Link>
+                <Link to="#settings" className="nav-link w-nav-link">Account</Link>
               </nav>
               <div className="w-nav-button">
                 <div className="w-icon-nav-menu"></div>
@@ -31,7 +31,7 @@ function Library() {
               <div className="book-cover">
                 <img src="./covers/old-man-cover.jpg" alt="Book 1" />
               </div>
-              <div className="book-title">The Old Man and the Sea</div>
+              <div className="book-title">The Old Man of the Sea</div>
             </Link>
             <Link to="/reader/1" className="book-item">
               <div className="book-cover"><img src="./covers/golden-bird-cover.jpg" alt="Book 2" /></div>
@@ -55,11 +55,11 @@ function Library() {
             </Link>
             <Link to="/reader/6" className="book-item">
               <div className="book-cover"><img src="./covers/jekyll-hyde-cover.jpg" alt="Book 7" /></div>
-              <div className="book-title">Jekyll and Hyde</div>
+              <div className="book-title">Dr. Jekyll and Mr. Hyde</div>
             </Link>
             <Link to="/reader/7" className="book-item">
               <div className="book-cover"><img src="./covers/three-little-cover.jpg" alt="Book 8" /></div>
-              <div className="book-title">Three Little Pigs</div>
+              <div className="book-title">The Three Little Pigs</div>
             </Link>
           </div>
           {/* <Link to="/" className="back-button">Back to Home</Link> */}

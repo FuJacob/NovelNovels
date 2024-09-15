@@ -52,7 +52,7 @@ function Reader() {
                   <div className="text-block">Novel Novels</div>
                 </Link>
                 <nav role="navigation" className="nav-menu w-nav-menu">
-                  <Link to="#settings" className="nav-link w-nav-link">Settings</Link>
+                  <Link to="#settings" className="nav-link w-nav-link">Account</Link>
                 </nav>
                 <div className="w-nav-button">
                   <div className="w-icon-nav-menu"></div>

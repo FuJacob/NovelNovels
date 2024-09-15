@@ -3,11 +3,14 @@
     width: 1000px; /* Set the width of the container to 1000px */
     margin: 0 auto; /* Center the container horizontally */
     text-align: left; /* Align text inside this container to the left */
+    margin-top: -40px;
+
   }
   
   .library-container h1,
   .library-container p {
     margin-left: 0; /* Ensure the heading and paragraph are aligned to the left */
+    /* margin-top: 200px; */
   }
   
   .book-list {

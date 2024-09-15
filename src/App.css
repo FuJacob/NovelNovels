@@ -31,7 +31,7 @@ h1, h2, h3 {
   align-items: center;
   justify-content: flex-start; 
   color: white;
-  padding-top: 40px; }
+  padding-top: 30px; }
 
 .App-link {
   color: #61dafb;
@@ -98,6 +98,7 @@ h1, h2, h3 {
   justify-content: center;
   margin-top: auto;
   box-shadow: 0 0 20px rgba(125, 125, 125, 0.05);
+  position: relative;
 }
 
 .land-container p {
@@ -107,6 +108,16 @@ h1, h2, h3 {
   line-height: 1.2;
   font-family: 'Metropolis', sans-serif;
   font-weight: bold;
+}
+
+.bottom-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  max-height: 40%; /* Adjust this value as needed */
+  object-fit: contain;
 }
 
 

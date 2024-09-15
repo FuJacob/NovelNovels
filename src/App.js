@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link, useLocation, useParams } from 'react-router-dom';
 import './fonts.css';
 import Library from './Library';
-import Reader from './reader'
+import Reader from './reader';
 
 const myMessage = "hello this is my story man";
 
@@ -54,7 +54,7 @@ function MainContent() {
             <div className="text-block">Novel Novels</div>
           </a>
           <nav role="navigation" className="nav-menu w-nav-menu">
-            <a href="#settings" className="nav-link w-nav-link">Settings</a>
+            <a href="#settings" className="nav-link w-nav-link">Account</a>
           </nav>
           <div className="w-nav-button">
             <div className="w-icon-nav-menu"></div>
